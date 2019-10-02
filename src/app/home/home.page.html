@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="Align">
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <img src="../../assets/images/medLogo3.8.png"><br>
+  
+    <!-- <ion-card ngIf="let apoint of Appointments">
+        {{ apoint.name }}
+      </ion-card> -->
+       
+  <ion-tabs>
+    <ion-tab-bar slot ="bottom">
+      <ion-button [routerLink]="'/addmedication'" tab="medication" color="primary">Add Medication</ion-button>
+      <ion-button  tab ="appointment" color="primary" [routerLink]="'/appointment'">Add Appointment</ion-button>    
+    </ion-tab-bar>
+  </ion-tabs>
+  </div>
+</ion-content>

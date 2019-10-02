@@ -1,0 +1,89 @@
+<ion-header>
+    <ion-toolbar color="primary" class="Align"> 
+      <ion-title><b>User Registration</b></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <div>
+        <form [formGroup]="RegisterForm" style = "margin-left: 10px;margin-right: 10px;">
+            <ion-item>
+                <!-- <ion-icon name="person"></ion-icon> -->
+                <ion-label position="floating">Name</ion-label>
+                <ion-input formControlName="name" [(ngModel)]="name"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <!-- <ion-icon name="person"></ion-icon> -->
+                <ion-label position="floating">Surname</ion-label>
+                <ion-input formControlName="surname" [(ngModel)]="surname"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <!-- <ion-icon name="person"></ion-icon> -->
+                <ion-label position="floating">Age</ion-label>
+                <ion-input formControlName="age" [(ngModel)]="age"></ion-input>
+            </ion-item>
+
+            <ion-item><br>
+                <!-- <ion-icon name="people"></ion-icon> -->
+
+                <ion-radio-group (ionChange)="getGender($event)">
+
+                    <ion-label>Gender</ion-label>
+
+                    <ion-item>
+                        <ion-label>Male</ion-label>
+                        <ion-radio slot="start" value="Male"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Female</ion-label>
+                        <ion-radio slot="start" value="female"></ion-radio>
+                    </ion-item>
+                </ion-radio-group>
+            </ion-item>
+
+            <ion-item>
+                <!-- <ion-icon name="call"></ion-icon> -->
+                <ion-label position="floating">Contact Number</ion-label>
+                <ion-input type="tel" formControlName="contact_number" [(ngModel)]="contact_number"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <!-- <ion-icon name="locate"></ion-icon> -->
+              <ion-label position="floating">Location</ion-label>
+              <ion-input type="text" formControlName="location" [(ngModel)]="location"></ion-input>
+          </ion-item>
+
+            <ion-item>
+                <!-- <ion-icon name="mail"></ion-icon> -->
+                <ion-label position="floating">Email Address</ion-label>
+                <ion-input formControlName="email_address" [(ngModel)]="email_address"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <!-- <ion-icon name="key"></ion-icon> -->
+                <ion-label position="floating">Password</ion-label>
+                <ion-input formControlName="password" [(ngModel)]="password"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <!-- <ion-icon name="key"></ion-icon> -->
+                <ion-label position="floating">Confirm Password</ion-label>
+                <ion-input formControlName="confirm_password" [(ngModel)]="confirm_password"></ion-input>
+            </ion-item>
+
+            <!-- <div class="Align">
+              <ion-button color="primary" (click)="signup()" >Register</ion-button>
+            </div> -->
+
+
+            <div class="Align">
+                <ion-button color="primary" (click)="signup()" [disabled]="!RegisterForm.valid">Next</ion-button>
+              </div>
+            <!-- <ion-button color ="primary">Add Next of Kin</ion-button>  -->
+        </form>
+    </div>
+    
+</ion-content>

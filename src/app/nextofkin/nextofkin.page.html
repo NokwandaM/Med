@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="Align">
+          nextofkin
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+        <ion-card>
+          <ion-card-content *ngFor="let next of  kinnz" class="Align"><b><strong>
+          <ion-item>
+            Name:{{next.name}}<br>
+            Surname:{{ next.surname }}<br>
+            Age:  {{ next.age }}<br>
+            Contact:{{ next.contact }}<br>
+            Relationship: {{ next.relationship }} 
+          </ion-item>
+          </strong></b>
+        </ion-card-content>
+      </ion-card>
+
+     <ion-card class="Align">
+        <ion-button [routerLink]="['/home']" shape="round">
+            <ion-icon name="home"></ion-icon>
+    </ion-button>
+    </ion-card>
+</ion-content>

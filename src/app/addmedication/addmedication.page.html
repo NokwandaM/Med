@@ -1,0 +1,136 @@
+<ion-header>
+  <ion-toolbar color="primary" style="text-align: center;">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+    <ion-title>Add</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+    <ion-card>
+      
+      <ion-card-content>  
+        <ion-item>
+          <!-- <ion-icon slot="start" name="add"></ion-icon>  <ion-input [(ngModel)]="medicineName" placeholder="Enter your medication"></ion-input> -->
+          <ion-select>
+            <ion-select-option *ngFor="let term of Pills?.results">
+              {{term.term}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item> 
+
+        <ion-item>
+        <ion-icon slot="start" name="water"></ion-icon> <ion-select [(ngModel)]="medicineType" placeholder="Type of medicine">
+                <ion-select-option value="pills">Pills</ion-select-option>
+                <ion-select-option value="spray">Spray</ion-select-option>
+               <ion-select-option value="Syrup">Syrup</ion-select-option>
+               <ion-select-option value="injection">Injection</ion-select-option>
+           </ion-select>
+         </ion-item>
+
+      </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-content>
+            <ion-item>
+            <ion-icon name="calendar"></ion-icon> &nbsp;&nbsp; <b>Start</b> 
+            <ion-label style="text-align: right">{{d}}</ion-label>
+            </ion-item>
+            <br>
+            <br>
+            <ion-item>
+                <ion-radio-group (ionChange)="intakeTime($event)">
+
+                  
+
+                    <ion-item>
+                        <ion-label>Everyday</ion-label>
+                        <ion-radio slot="start" value="everyday" checked></ion-radio>
+                        
+                    </ion-item>
+                      <ion-item>
+                        <ion-label>Cycle</ion-label>
+                        <ion-radio slot="start" value="cycle"></ion-radio>
+                      </ion-item>
+                    <ion-item>
+                          <ion-label>Certain days</ion-label>
+                          <ion-radio slot="start" value="certain days"></ion-radio>
+                    </ion-item>
+                      <ion-item>
+                        <ion-label>Days interval</ion-label>
+                        <ion-radio slot="start" value="days interval"></ion-radio>
+                    </ion-item>
+                </ion-radio-group>
+            </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+            <ion-card>
+                <ion-card-content>
+                  <ion-item>
+                    <ion-icon name="calendar"></ion-icon> &nbsp;&nbsp; <b>Duration</b>  
+                    <ion-select style="text-align: right" (ionChange) = "setDays($event)" [(ngModel)]="days" placeholder="Number of days">
+                      <ion-select-option value="1day">1</ion-select-option>
+                      <ion-select-option value="2days">2</ion-select-option>
+                      <ion-select-option value="3days">3</ion-select-option>
+                      <ion-select-option value="4days">4</ion-select-option>
+                      <ion-select-option value="5days">5</ion-select-option>
+                      <ion-select-option value="6days">6</ion-select-option>
+                      <ion-select-option value="7days">7</ion-select-option>
+                      <ion-select-option value="8days">8</ion-select-option>
+                      <ion-select-option value="9days">9</ion-select-option>
+                      <ion-select-option value="10days">10</ion-select-option>
+                      <ion-select-option value="11days">11</ion-select-option>
+                      <ion-select-option value="12days">12</ion-select-option>
+                      <ion-select-option value="13days">13</ion-select-option>
+                      <ion-select-option value="14days">14</ion-select-option>
+                      <ion-select-option value="15days">15</ion-select-option>
+                      <ion-select-option value="16days">16</ion-select-option>
+                      <ion-select-option value="17days">17</ion-select-option>
+                      <ion-select-option value="18days">18</ion-select-option>
+                      <ion-select-option value="19days">19</ion-select-option>
+                      <ion-select-option value="20days">20</ion-select-option>
+                      <ion-select-option value="21days">21</ion-select-option>
+                      <ion-select-option value="22days">22</ion-select-option>
+                      <ion-select-option value="23days">23</ion-select-option>
+                      <ion-select-option value="24days">24</ion-select-option>
+                      <ion-select-option value="25days">25</ion-select-option>
+                      <ion-select-option value="26days">26</ion-select-option>
+                      <ion-select-option value="27days">27</ion-select-option>
+                      <ion-select-option value="28days">28</ion-select-option>
+                      <ion-select-option value="29days">29</ion-select-option>
+                      <ion-select-option value="30days">30</ion-select-option>
+                      <ion-select-option value="31days">31</ion-select-option>          
+                    </ion-select> &nbsp;&nbsp;&nbsp; days
+                  </ion-item>  
+
+                  <ion-item>
+                    <ion-icon name="alarm"></ion-icon> &nbsp;&nbsp; <b>Time</b> 
+                    <ion-select style="text-align: right" (ionChange) = "setTime($event)" [(ngModel)]="time" placeholder="How may times a day">
+                      <ion-select-option value="1timesDay">Once a day</ion-select-option>
+                      <ion-select-option value="2timesDay">Twice a day</ion-select-option>
+                      <ion-select-option value="3timesDay">Three times a day</ion-select-option>
+                      <ion-select-option value="4timesDay">Four times a day</ion-select-option>
+                      <ion-select-option value="5timesDay">Five times a day</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+        
+                  </ion-card-content>
+            </ion-card>
+
+            <div style = "text-align: center;">
+              <ion-button shape="round" (click)="AddReminder()"  color="primary">
+                <ion-icon name="checkmark-circle"></ion-icon>Add
+              </ion-button>
+            </div>
+
+</ion-content>
+
+<!-- <ion-tabs>
+  <ion-tab-bar>
+   
+  </ion-tab-bar>
+</ion-tabs> -->

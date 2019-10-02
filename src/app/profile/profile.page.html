@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="Align">
+            Profile
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bcg">
+    <ion-card *ngFor="let usered of used" class="Align">
+        <ion-card-header>
+            <ion-card-subtitle><b><strong>User Information</strong></b></ion-card-subtitle>
+            <div class="ion-padding" class="Align">
+                <img src="../../assets/images/100913881-user-icon-vector-male.jpg" width="100%" height="auto">
+            </div>
+            <!-- <ion-card-title><b>{{ usered.name }}</b></ion-card-title> -->
+        </ion-card-header>
+
+        <ion-card-content><b><strong>
+        <ion-item>
+          Name:{{ usered.name }}<br>
+          Surname:  {{ usered.surname }}<br>
+          Age:  {{ usered.age }}<br>
+          Contact:{{ usered.contact }}<br>
+          Email: {{ usered.email }} 
+        </ion-item>
+        </strong></b></ion-card-content>
+    </ion-card>
+    
+    <!-- <ion-card>
+        <ion-card-content *ngFor="let next of  kinnz" class="Align"><b><strong>
+        <ion-item>
+          Name:{{next.name}}<br>
+          Surname:{{ next.surname }}<br>
+          Age:  {{ next.age }}<br>
+          Contact:{{ next.contact }}<br>
+          Relationship: {{ next.relationship }} 
+        </ion-item>
+        </strong></b></ion-card-content>
+    </ion-card>
+   -->
+
+    <ion-card class="Align">
+        <ion-button [routerLink]="['/home']" shape="round">
+            <ion-icon name="home"></ion-icon>
+    </ion-button>
+    </ion-card>
+</ion-content>

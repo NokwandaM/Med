@@ -1,0 +1,26 @@
+<ion-content>
+    <img src="../../assets/images/medLogo3.10.png">
+
+    <ion-card>
+      <ion-item>
+       <ion-label position="floating"><ion-icon name="mail"></ion-icon>Email</ion-label><br> 
+       <ion-input [(ngModel)]="email" name="email" type="email" required="required"></ion-input>
+      </ion-item>
+        
+      <ion-item>
+        <ion-label  position="floating"><ion-icon name="key"></ion-icon>Password</ion-label>
+        <ion-input [type]="passwordType" [(ngModel)]="password" name="password" clearOnEdit="false" required="required"></ion-input>
+        <ion-icon [name]="passwordIcon" color="primary" slot="end" (click)='hideShowPassword()'></ion-icon>
+      </ion-item>
+    </ion-card>
+
+        <div class="align"> <a color="clear" (click)="resetepassword()">Forgot Password?</a></div>
+  
+       <div padding text-center>
+        <ion-button expand="block" *ngIf="email && password" color="primary" (click)="login()"> <ion-icon name="unlock"></ion-icon>Login</ion-button><br>
+       <ion-button expand="block" *ngIf="!email && !password" color="primary" clear><ion-icon name="unlock"></ion-icon>Login</ion-button><br>
+       
+       <!-- <ion-button expand="block" color="primary" [routerLink]="['/patient-registration']"><ion-icon name="create"></ion-icon>Register</ion-button><br> -->
+      </div>
+
+</ion-content>

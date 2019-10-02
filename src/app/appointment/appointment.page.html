@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="Align">
+          Appointment
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>    
+        <ion-card>
+            <ion-label position="floating">Institution</ion-label>
+            <ion-select color="primary" [(ngModel)]="Appointinstitution" placeholder="selct institution">
+                <ion-select-option value="clinic">Clinic</ion-select-option>
+                <ion-select-option value="hospital">Hospital</ion-select-option>
+                <ion-select-option value="private">Private</ion-select-option>
+            </ion-select>
+        </ion-card>
+        <ion-item>
+            <ion-label>
+                <ion-icon color="primary" size="large" name="today"></ion-icon>Date</ion-label>
+            <ion-datetime [(ngModel)]="Appointdate" placeholder="select date" type="date"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>
+                <ion-icon color="primary" size="large" name="alarm"></ion-icon>Time</ion-label>
+            <ion-datetime [(ngModel)]="Appointtime" displayFormat="h:mm A" minutesValues="0,15,30,45" placeholder="set time"></ion-datetime>
+        </ion-item>
+
+        <ion-card>
+            <ion-label position="floating">
+                <ion-icon color="primary" size="large" name="document"></ion-icon>Reason</ion-label>
+            <ion-textarea [(ngModel)]="AppointReason" name="reason" type="textarea"></ion-textarea>
+        </ion-card>
+    </ion-card>
+
+     <ion-tabs>
+        <ion-tab-bar>
+            <ion-button shape="round" (click)="submitFirebaseAppointment()"  color="primary"><ion-icon name="checkmark-circle"></ion-icon>Save</ion-button>
+            <ion-button shape="round"  (click)="edit()" color="primary"><ion-icon name="create"></ion-icon>Edit</ion-button>
+            <ion-button [routerLink]="['/home']" shape="round" (click)="cancel()" color="primary"><ion-icon name="close"></ion-icon> Cancel</ion-button>
+        </ion-tab-bar>
+       </ion-tabs>
+       
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar class="Align" color="primary">
+      <ion-title><b>Next of Kin</b></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <!-- <ion-card class="nclass"> -->
+      <form [formGroup]="next_of_keenForm" style = "margin-left: 10px;margin-right: 10px;">
+
+          <ion-item>
+              <ion-label position="floating">Name</ion-label>
+              <ion-input formControlName="Name" [(ngModel)]="Name" name="Name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Surname</ion-label>
+              <ion-input formControlName="Surname" [(ngModel)]="Surname" name="Surname" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Age</ion-label>
+              <ion-input formControlName="Age"[(ngModel)]="Age" name="Age" type="age"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Contact Number</ion-label>
+              <ion-input formControlName="Contact" [(ngModel)]="Contact" name="Contact" type="tel"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position ="floating">Relationship to patient</ion-label>
+              <ion-input formControlName="Relationship" [(ngModel)]="Relationship" name="Relationship" type="text"></ion-input>
+            </ion-item><br>
+
+       </form>
+        
+     <!-- </ion-card> -->
+     <div padding text-center>
+        <ion-button color="primary" (click)="sendKinConfirmSMS();" [routerLink]="['/home']"><ion-icon name="checkmark-circle"></ion-icon>Save</ion-button>
+      </div>
+      <!-- <div class="Align">
+        <ion-button color="primary" (click)="signup()" [disabled]="!next_of_keenForm">Register</ion-button>
+      </div> -->
+</ion-content>
